@@ -1,0 +1,139 @@
+@import '../../_config.scss';
+
+.tasks {
+  &__title {
+    font-family: $tasks-title-font;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    color: $tasks-title;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $tasks-title-line;
+
+    &:hover {
+      img {
+        opacity: .2;
+      }
+    }
+
+    img {
+      opacity: 0;
+      cursor: pointer;
+      margin-left: 10px;
+      margin-bottom: 2px;
+      transition: .1s;
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+
+  &__form {
+    margin-top: 20px;
+    &-new {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      opacity: .4;
+      transition: opacity .1s ease-in-out;
+
+      &:hover {
+        opacity: .6;
+      }
+
+      img {
+        width: 16px;
+        height: 16px;
+        margin-left: 4px;
+      }
+
+      span {
+        font-size: 16px;
+        margin-left: 19px;
+      }
+    }
+    &-block {
+      .button {
+        margin-right: 10px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__items {
+    margin-top: 30px;
+
+    h2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-family: Montserrat;
+      font-weight: bold;
+      font-size: 22px;
+      text-align: center;
+      color: #C9D1D3;
+    }
+    &-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+
+      input {
+        margin-left: 15px;
+        font-size: 16px;
+        border: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .checkbox {
+    &:hover {
+      label {
+        background-color: $bg-hover-checkbox;
+        border-color: $bg-hover-checkbox;
+        svg {
+          opacity: 1;
+          path {
+            stroke: $check-hover-checkbox;
+          }
+        }
+      }
+    }
+    input {
+      display: none;
+    }
+    svg {
+      transition: .3s;
+      path {
+        stroke: $empty-checkbox;
+      }
+    }
+    label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: 2px solid $empty-checkbox;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      transition: .1s;
+
+      svg {
+        opacity: 0;
+      }
+    }
+    input:checked + label {
+      background-color: $selected-checkbox;
+      border-color: $selected-checkbox;
+
+      svg {
+        opacity: 1;
+        path {
+          stroke: #fff;
+        }
+      }
+    }
+  }
+}

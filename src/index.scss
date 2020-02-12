@@ -1,0 +1,74 @@
+@import 'config';
+
+.todo {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 750px;
+  height: 530px;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 20px $todo-shadow;
+  border: 1px solid $todo-border;
+  border-radius: 10px;
+  font-size: 14px;
+  &__sidebar {
+    padding: 60px 20px 60px 20px;
+    background-color: $sidebar-bg;
+    width: 200px;
+    height: calc(100% - 120px);
+    border-right: 1px solid $sidebar-border;
+  }
+  &__tasks {
+    flex: 1;
+    padding: 60px;
+  }
+}
+
+
+.button {
+  background: #4DD599;
+  border-radius: 4px;
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  transition: .1s;
+  cursor: pointer;
+  &:hover {
+    background:  darken($color: #4DD599, $amount: 6%);
+  }
+  &:active {
+    background:  darken($color: #4DD599, $amount: 10%);
+  }
+  &:disabled {
+    background: $btn-disabled-bg;
+  }
+  &--grey {
+    background-color: $cancel-btn-bg;
+    color: $cancel-btn-clr;
+    &:hover {
+      background:  darken($color: $cancel-btn-bg, $amount: 3%);
+    }
+    &:active {
+      background:  darken($color: $cancel-btn-bg, $amount: 6%);
+    }
+  }
+}
+
+.field {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  &:focus {
+    border-color: #dbdbdb;
+  }
+  &.empty {
+    border: 1px solid rgb(252, 147, 147);
+  }
+}
+

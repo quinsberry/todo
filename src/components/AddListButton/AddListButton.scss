@@ -1,0 +1,43 @@
+@import '../../config';
+
+.add-list {
+  &__popup {
+    z-index: 2;
+    position: relative;
+    padding: 18px;
+    width: 240px;
+    height: 150px;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    left: 10px;
+    .button {
+      margin-top: 12px;
+      width: 100%;
+    }
+    &-close-btn {
+      position: absolute;
+      right: -8px;
+      top: -8px;
+      cursor: pointer;
+    }
+    &-colors {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      .badge {
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        border: 2px solid transparent;
+        &.active {
+          border: 2px solid #525252;
+        }
+      }
+    }
+  }
+  .list {
+    margin-bottom: 5px;
+  }
+  
+}

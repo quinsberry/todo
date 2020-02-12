@@ -1,0 +1,30 @@
+$todo-font: 'Roboto';
+$tasks-title-font: 'Montserrat';
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  // box-sizing: border-box;
+  font-family: $todo-font, -apple-system, sysem-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+$sidebar-bg: #f4f6f8;
+$sidebar-border: #f1f1f1;
+$todo-shadow: #f3f3f3;
+$todo-border: #f1f1f1;
+$sidebar-svg: #7C7C7C;
+$tasks-title: #64c4ed;
+$tasks-title-line: #F2F2F2;
+$empty-checkbox: #e8e8e8;
+$selected-checkbox: #4DD599;
+$check-hover-checkbox: #b2b2b2;
+$bg-hover-checkbox: #f2f2f2;
+$cancel-btn-bg: #F4F6F8;
+$cancel-btn-clr: #9C9C9C;
+$btn-disabled-bg: #d8d8d8;
