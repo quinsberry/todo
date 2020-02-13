@@ -7,7 +7,7 @@ import Badge from '../Badge';
 import './List.scss';
 import removeSvg from '../../assets/img/remove.svg';
 
-const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem, all }) => {
+const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }) => {
   const removeList = (item) => {
     if (window.confirm('Do you want to remove this list?')) {
       axios
@@ -17,12 +17,11 @@ const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem, 
         });
     }
   }
-  console.log(items);
 
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => (
-        <li onClick={onClickItem ? () => onClickItem(item) : null} key={index} className={classNames(item.className, { 'active': activeItem ? activeItem && activeItem.id === item.id : null })}>
+        <li onClick={onClickItem ? () => onClickItem(item) : null} key={index} className={classNames(item.className, { 'active': activeItem && activeItem.id === item.id })}>
           <i>
             {item.icon ? (
               item.icon
