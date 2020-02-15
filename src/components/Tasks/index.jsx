@@ -7,7 +7,7 @@ import AddTaskForm from './AddTaskForm';
 import './Tasks.scss';
 import editSvg from '../../assets/img/edit.svg';
 
-const Tasks = ({ list, onEditTitle, onAddTask, withoutEmpty, onRemoveTask, onEditTask }) => {
+const Tasks = ({ list, onEditTitle, onAddTask, withoutEmpty, onRemoveTask, onEditTask, onCompleteTask }) => {
   const editTitle = () => {
     const newTitle = window.prompt('The name of you list', list.name)
     if (newTitle) {
@@ -30,7 +30,7 @@ const Tasks = ({ list, onEditTitle, onAddTask, withoutEmpty, onRemoveTask, onEdi
       <div className="tasks__items">
         {!withoutEmpty && list.tasks && !list.tasks.length && <h2>You have no tasks</h2>}
         {list.tasks && list.tasks.map(task => (
-          <Task key={task.id} list={list} onEdit={onEditTask} onRemove={onRemoveTask} {...task} />
+          <Task key={task.id} list={list} onEdit={onEditTask} onComplete={onCompleteTask} onRemove={onRemoveTask} {...task} />
         ))}
         <AddTaskForm key={list.id} list={list} onAddTask={onAddTask} />
       </div>

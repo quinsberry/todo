@@ -25,6 +25,28 @@ export default function App() {
     });
   }, []);
 
+  const onCompleteTask = (listId, taskId, completed) => {
+    axios
+      .patch('http://localhost:3001/tasks/' + taskId, { completed })
+      .then(() => {
+        const newList = lists.map(item => {
+          if (item.id === listId) {
+            item.tasks = item.tasks.map(task => {
+              if (task.id === taskId) {
+                task.completed = completed;
+              }
+              return task;
+            });
+          }
+          return item;
+        });
+        setLists(newList);
+      })
+      .catch(() => {
+        alert('Ups, we have some problems. Cannot complete the task.');
+      })
+  }
+
   const onAddList = (obj) => {
     const newList = [
       ...lists,
@@ -91,7 +113,7 @@ export default function App() {
         setLists(newList);
       })
       .catch(() => {
-        alert('Ups, we have some problems. Cannot edit the task.');
+        alert('Ups, we have some problems. Cannot update the task.');
       })
   }
 
@@ -142,11 +164,28 @@ export default function App() {
       </div>
       <div className="todo__tasks">
         <Route exact path="/">
-          {lists && lists.map(list => (<Tasks key={list.id} withoutEmpty list={list} onAddTask={onAddTask} onEditTitle={onEditListTitle} />))}
+          {lists && lists.map(list => (<Tasks
+            key={list.id}
+            withoutEmpty
+            list={list}
+            onAddTask={onAddTask}
+            onEditTitle={onEditListTitle}
+            onEditTask={onEditTask}
+            onRemoveTask={onRemoveTask}
+            onCompleteTask={onCompleteTask}
+          />))}
         </Route>
         <Route path="/lists/:id">
           {activeItem && lists && (
-            <Tasks list={activeItem} onAddTask={onAddTask} onEditTitle={onEditListTitle} onEditTask={onEditTask} onRemoveTask={onRemoveTask} />
+            <Tasks
+              list={activeItem}
+              onAddTask={onAddTask}
+              onEditTitle={onEditListTitle}
+              onEditTask={onEditTask}
+              onRemoveTask={onRemoveTask}
+              onCompleteTask={onCompleteTask}
+            />
+
           )}
         </Route>
       </div>
