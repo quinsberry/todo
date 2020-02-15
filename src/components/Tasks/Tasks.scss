@@ -55,6 +55,43 @@
         margin-left: 19px;
       }
     }
+    // &-new {
+    //   $self: &;
+    //   display: flex;
+    //   align-items: center;
+    //   cursor: pointer;
+    //   .unhovered,.hovered {
+    //     display: flex;
+    //     align-items: center;
+    //   }
+    //   .hovered {
+    //     visibility: hidden;
+    //     opacity: .6;
+    //   }
+    //   .unhovered {
+    //     opacity: .4;
+    //   }
+    //   img {
+    //     width: 16px;
+    //     height: 16px;
+    //     margin-left: 4px;
+    //   }
+
+    //   span {
+    //     font-size: 16px;
+    //     margin-left: 19px;
+    //   }
+    //   &:hover {
+    //     .tasks__form-new {
+    //       .unhovered {
+    //         visibility: hidden;
+    //       }
+    //       .hovered {
+    //       visibility: visible;
+    //       }
+    //     }  
+    //   }
+    // }
     &-block {
       .button {
         margin-right: 10px;
@@ -108,12 +145,19 @@
           }
         }
       }
+      &:hover {
+        .tasks__items-row-actions {
+          opacity: 1;
+        }
+      }
 
-      input {
+      p {
         margin-left: 15px;
         font-size: 16px;
         border: 0;
-        width: 100%;
+        width: 85%;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
     }
   }

@@ -2,12 +2,12 @@ import React from 'react';
 import axios from 'axios';
 
 import Task from './Task';
-import AddTaskFrom from './AddTaskFrom';
+import AddTaskForm from './AddTaskForm';
 
 import './Tasks.scss';
 import editSvg from '../../assets/img/edit.svg';
 
-const Tasks = ({ list, onEditTitle, onAddTask, withoutEmpty }) => {
+const Tasks = ({ list, onEditTitle, onAddTask, withoutEmpty, onRemoveTask, onEditTask }) => {
   const editTitle = () => {
     const newTitle = window.prompt('The name of you list', list.name)
     if (newTitle) {
@@ -28,11 +28,11 @@ const Tasks = ({ list, onEditTitle, onAddTask, withoutEmpty }) => {
         <img onClick={editTitle} src={editSvg} alt="Edit Icon" />
       </h2>
       <div className="tasks__items">
-        {!withoutEmpty && !list.tasks.length && <h2>You have no tasks</h2>}
-        {list.tasks.map(task => (
-          <Task key={task.id} {...task} />
+        {!withoutEmpty && list.tasks && !list.tasks.length && <h2>You have no tasks</h2>}
+        {list.tasks && list.tasks.map(task => (
+          <Task key={task.id} list={list} onEdit={onEditTask} onRemove={onRemoveTask} {...task} />
         ))}
-        <AddTaskFrom list={list} onAddTask={onAddTask} />
+        <AddTaskForm key={list.id} list={list} onAddTask={onAddTask} />
       </div>
     </div>
   )

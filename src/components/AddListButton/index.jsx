@@ -15,6 +15,8 @@ const AddButtonList = ({ colors, onAdd }) => {
   const [emptyInput, setEmptyInput] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+
+
   useEffect(() => {
     if (Array.isArray(colors)) {
       setSelectedColor(colors[0].id);
@@ -27,6 +29,12 @@ const AddButtonList = ({ colors, onAdd }) => {
     setSelectedColor(colors[0].id);
     setEmptyInput(false);
   }
+  const handleOnChange = e => {
+    setInputValue(e.target.value);
+    if (inputValue.length === 0) {
+      setEmptyInput(false);
+    }
+  }
 
   const addList = () => {
     if (!inputValue) {
@@ -38,8 +46,8 @@ const AddButtonList = ({ colors, onAdd }) => {
       axios
         .post('http://localhost:3001/lists', { name: inputValue, colorId: selectedColor })
         .then(({ data }) => {
-          const color = colors.filter(c => c.id === selectedColor)[0].name;
-          const listObj = { ...data, color: { name: color } };
+          const color = colors.filter(c => c.id === selectedColor)[0];
+          const listObj = { ...data, color, tasks: [] };
           onAdd(listObj);
           onClose();
         })
@@ -52,6 +60,10 @@ const AddButtonList = ({ colors, onAdd }) => {
         });
     }
 
+  }
+  const clickingOutside = e => {
+    onClose();
+    // console.log(clicking);
   }
 
   return (
@@ -66,11 +78,12 @@ const AddButtonList = ({ colors, onAdd }) => {
           name: 'Add list'
         }
       ]} />
+      {visiblePopup && <div className="outside" onClick={clickingOutside}></div>}
       {
         visiblePopup &&
         <div className="add-list__popup">
           <img onClick={onClose} src={closeSvg} alt="Close button" className="add-list__popup-close-btn" />
-          <input value={inputValue} onChange={e => setInputValue(e.target.value)} className={classNames("field", { 'empty': emptyInput })} type="text" placeholder="List name" />
+          <input value={inputValue} onChange={handleOnChange} className={classNames("field", { 'empty': emptyInput })} type="text" placeholder="List name" />
           <div className="add-list__popup-colors">
             {
               colors.map(color => <Badge onClick={() => setSelectedColor(color.id)} key={color.id} color={color.name} className={selectedColor === color.id && 'active'} />)

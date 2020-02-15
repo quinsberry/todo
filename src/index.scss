@@ -1,4 +1,5 @@
 @import 'config';
+@import 'media';
 
 .todo {
   display: flex;
@@ -34,7 +35,7 @@
   border: 0;
   padding: 10px 20px;
   font-size: 14px;
-  transition: .1s;
+  // transition: .1s;
   cursor: pointer;
   &:hover {
     background:  darken($color: #4DD599, $amount: 6%);
