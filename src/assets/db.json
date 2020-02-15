@@ -31,11 +31,6 @@
       "id": 6
     },
     {
-      "name": "Course ReactJS ToDo",
-      "colorId": 7,
-      "id": 7
-    },
-    {
       "name": "12",
       "colorId": 4,
       "id": 8
@@ -46,12 +41,6 @@
       "id": 1,
       "listId": 2,
       "text": "Learn JavaScript",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "listId": 2,
-      "text": "Learn project patterns",
       "completed": false
     },
     {
@@ -85,58 +74,16 @@
       "id": 8
     },
     {
-      "listId": 1,
-      "text": "123",
-      "completed": false,
-      "id": 9
-    },
-    {
       "listId": 4,
       "text": "Buy 1984!",
       "completed": true,
       "id": 10
     },
     {
-      "listId": 7,
-      "text": "Made sidebar",
-      "completed": true,
-      "id": 15
-    },
-    {
-      "listId": 7,
-      "text": "Made task list",
-      "completed": true,
-      "id": 16
-    },
-    {
-      "listId": 7,
-      "text": "Made removing and editing task list",
-      "completed": true,
-      "id": 17
-    },
-    {
       "listId": 5,
       "text": "12",
       "completed": false,
       "id": 20
-    },
-    {
-      "listId": 1,
-      "text": "21",
-      "completed": false,
-      "id": 21
-    },
-    {
-      "listId": 1,
-      "text": "3",
-      "completed": false,
-      "id": 22
-    },
-    {
-      "listId": 1,
-      "text": "3",
-      "completed": false,
-      "id": 23
     },
     {
       "listId": 3,
