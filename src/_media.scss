@@ -19,21 +19,115 @@
 @include media-lg {
   html {
     .todo {
+      box-sizing: border-box;
       width: 100%;
       height: 100%;
+      &__tasks {
+        position: relative;
+        padding: 60px 50px;
+        width: calc(100% - 120px);
+        .tasks__items {
+          h2 {
+            top: 40%;
+            left: 40%;
+          }
+        }
+      }
     }
   }
 }
 @include media-md {
   html {
     .todo {
+      box-sizing: border-box;
+      &__sidebar.active {
+        width: 200px;
+        transition: .3s ease-in-out;
+        z-index: 3;
+        position: fixed;
+        .openSidebar {
+          display: none;
+        }
+        .list__remove-icon {
+          display: inherit;
+        }
+      }
       &__sidebar {
+        position: fixed;
         width: 45px;
         padding: 60px 5px;
+        transition: .3s;
+        .openSidebar {
+          display: inherit;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: transparent;
+        }
         .list {
+          $self: &;
+          &__remove-icon {
+            display: none;
+          }
           &__add-button {
             i {
               margin-left: 4px;
+            }
+          }
+        }
+      }
+      &__tasks {
+        padding: 60px 50px;
+        z-index: -1;
+        margin-left: 56px;
+        .tasks__items {
+          h2 {
+            top: 40%;
+            left: 35%;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-sm {
+  html {
+    .todo {
+      &__tasks {
+        padding: 60px 40px;
+        .tasks__items {
+          h2 {
+            top: 40%;
+            left: 22%;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-xs {
+  html {
+    .todo {
+      padding-top: 20px;
+      height: calc(100% + 100px);
+      &__tasks {
+        padding: 60px 20px;
+        .tasks__items {
+          h2 {
+            top: 40%;
+            left: 10%;
+            font-size: 20px;
+          }
+          &-row {
+            label {
+              width: 17px;
+              height: 17px;
+            }
+            p {
+              margin-left: 10px;
+              width: 55%;
             }
           }
         }
