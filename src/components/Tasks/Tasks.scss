@@ -12,9 +12,11 @@
     font-weight: bold;
     font-size: 32px;
     line-height: 39px;
-    color: $tasks-title;
+    color: $tasks-title;    
     padding-bottom: 20px;
     border-bottom: 1px solid $tasks-title-line;
+    overflow: hidden;
+    word-wrap: break-word;
 
     &:hover {
       img {
@@ -58,43 +60,6 @@
         margin-left: 19px;
       }
     }
-    // &-new {
-    //   $self: &;
-    //   display: flex;
-    //   align-items: center;
-    //   cursor: pointer;
-    //   .unhovered,.hovered {
-    //     display: flex;
-    //     align-items: center;
-    //   }
-    //   .hovered {
-    //     visibility: hidden;
-    //     opacity: .6;
-    //   }
-    //   .unhovered {
-    //     opacity: .4;
-    //   }
-    //   img {
-    //     width: 16px;
-    //     height: 16px;
-    //     margin-left: 4px;
-    //   }
-
-    //   span {
-    //     font-size: 16px;
-    //     margin-left: 19px;
-    //   }
-    //   &:hover {
-    //     .tasks__form-new {
-    //       .unhovered {
-    //         visibility: hidden;
-    //       }
-    //       .hovered {
-    //       visibility: visible;
-    //       }
-    //     }  
-    //   }
-    // }
     &-block {
       .button {
         margin-right: 10px;
@@ -159,8 +124,7 @@
         font-size: 16px;
         border: 0;
         width: 85%;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        word-wrap: break-word;
       }
     }
   }

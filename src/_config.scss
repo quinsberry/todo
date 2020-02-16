@@ -50,7 +50,12 @@ $btn-disabled-bg: #d8d8d8;
     }
 }
 @mixin media-xl {
-    @media screen and (max-width: 1600px) {
+    @media screen and (min-width: 1300px) and (max-width: 1999px) {
+        @content;
+    }
+}
+@mixin media-4K {
+    @media screen and (min-width: 2000px) {
         @content;
     }
 }

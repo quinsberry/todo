@@ -1,5 +1,21 @@
 @import 'config';
 
+@include media-4K {
+  html {
+    .todo {
+      width: 60vw;
+      height: 65vh;
+    }
+  }
+}
+@include media-xl {
+  html {
+    .todo {
+      width: 80vw;
+      height: 85vh;
+    }
+  }
+}
 @include media-lg {
   html {
     .todo {
