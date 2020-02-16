@@ -115,10 +115,14 @@
 @include media-xs {
   html {
     .todo {
-      padding-top: 20px;
-      height: calc(100% + 100px);
+      height: 100vh;
+      border: none;
+      box-shadow: none;
+      &__sidebar {
+        padding: 30px 5px 130px 5px;
+      }
       &__tasks {
-        padding: 60px 20px;
+        padding: 30px 20px 130px 20px;
         .tasks__items {
           h2 {
             top: 40%;
