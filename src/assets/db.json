@@ -60,18 +60,6 @@
       "text": "13",
       "completed": true,
       "id": 30
-    },
-    {
-      "listId": 2,
-      "text": "sd",
-      "completed": false,
-      "id": 31
-    },
-    {
-      "listId": 2,
-      "text": "sw",
-      "completed": false,
-      "id": 32
     }
   ],
   "colors": [

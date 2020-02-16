@@ -8,15 +8,19 @@
     text-decoration: none;
   }
   &__title {
-    font-family: $tasks-title-font;
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 39px;
-    color: $tasks-title;    
-    padding-bottom: 20px;
+    display: inline-block;
     border-bottom: 1px solid $tasks-title-line;
-    overflow: hidden;
-    word-wrap: break-word;
+    width: 100%;
+    h2 {
+      font-family: $tasks-title-font;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 39px;
+      color: $tasks-title;    
+      padding-bottom: 20px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
 
     &:hover {
       img {

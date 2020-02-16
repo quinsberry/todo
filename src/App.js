@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Route, useHistory } from 'react-router-dom';
+import classNames from 'classnames';
 
 import { List, AddListButton, Tasks } from './components';
 import MobileSidebar from './components/MobileSidebar';
@@ -176,7 +177,7 @@ export default function App() {
             </div>
           </>
         )}
-      <div className="todo__tasks" onClick={() => {
+      <div className={classNames('todo__tasks', { 'disabled': isOpened })} onClick={() => {
         if (isOpened) {
           setIsOpened(false);
         }

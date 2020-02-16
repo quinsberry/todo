@@ -24,12 +24,14 @@ const Tasks = ({ list, onEditTitle, onAddTask, withoutEmpty, onRemoveTask, onEdi
   }
   return (
     <div className="tasks">
-      <Link to={`/lists/${list.id}`}>
-        <h2 style={{ color: list.color.hex }} className="tasks__title">
-          {list.name}
-          <img onClick={editTitle} src={editSvg} alt="Edit Icon" />
-        </h2>
-      </Link>
+      <div className="tasks__title">
+        <Link to={`/lists/${list.id}`}>
+          <h2 style={{ color: list.color.hex }}>
+            {list.name}
+            <img onClick={editTitle} src={editSvg} alt="Edit Icon" />
+          </h2>
+        </Link>
+      </div>
       <div className="tasks__items">
         {!withoutEmpty && list.tasks && !list.tasks.length && <h2>You have no tasks</h2>}
         {list.tasks && list.tasks.map(task => (

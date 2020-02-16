@@ -78,6 +78,11 @@
           }
         }
       }
+      &__tasks.disabled {
+        a {
+          pointer-events: none;
+        }
+      }
       &__tasks {
         padding: 60px 50px;
         z-index: -1;
