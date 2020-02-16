@@ -4,6 +4,9 @@
   &:not(:last-of-type) {
     margin-bottom: 30px;
   }
+  a {
+    text-decoration: none;
+  }
   &__title {
     font-family: $tasks-title-font;
     font-weight: bold;

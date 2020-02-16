@@ -68,12 +68,6 @@
       "id": 7
     },
     {
-      "listId": 1,
-      "text": "qweqwe",
-      "completed": true,
-      "id": 8
-    },
-    {
       "listId": 4,
       "text": "Buy 1984!",
       "completed": true,
@@ -102,6 +96,12 @@
       "text": "13",
       "completed": false,
       "id": 30
+    },
+    {
+      "listId": 2,
+      "text": "sd",
+      "completed": false,
+      "id": 31
     }
   ],
   "colors": [
